@@ -1,0 +1,90 @@
+//================================================== 
+// Bootstrap
+// ==================================================
+
+// Using built-in modules
+@use 'sass:map';
+
+// Custom modules
+@use '../vendors_extensions/variables/color' as color;
+@use '../vendors_extensions/components/button' as button;
+@use '../vendors_extensions/components/card' as card;
+@use '../vendors_extensions/components/modal' as modal;
+@use '../vendors_extensions/components/navbar' as navbar;
+@use '../vendors_extensions/components/close' as close;
+
+
+
+// Functions Bootstrap
+//
+@import '~bootstrap/scss/functions';
+
+//
+// Variables Bootstrap
+//
+@import '~bootstrap/scss/variables';
+
+// Menerapkan/override variables Bootstrap apa pun di sini
+$theme-colors: map.deep-merge($theme-colors, color.$theme-colors);
+
+// Button
+$btn-padding-x: button.$padding-x;
+$btn-padding-y: button.$padding-y;
+
+
+// Modal
+$modal-header-padding: modal.$modal-header-padding-x modal.$modal-header-padding-y;    
+
+
+// Card
+$card-border-width: card.$border-width;
+$card-border-radius: card.$border-radius;
+$card-inner-border-radius: subtract($card-border-radius, $card-border-width);
+
+// Navbar
+$navbar-padding-y: $spacer * navbar.$navbar-padding-y;
+
+// Button close
+$btn-close-opacity: close.$opacity;
+$btn-close-hover-opacity: close.$hover-opacity;
+
+//
+// Konfigurasi Bootstrap
+//
+@import '~bootstrap/scss/maps';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/root';
+@import '~bootstrap/scss/utilities';
+@import '~bootstrap/scss/reboot';
+
+//
+// Layouts dan components
+//
+@import '~bootstrap/scss/type';
+@import '~bootstrap/scss/images';
+@import '~bootstrap/scss/containers';
+@import '~bootstrap/scss/grid';
+
+@import '~bootstrap/scss/helpers';
+
+// Komponen-Komponen
+@import '~bootstrap/scss/buttons';
+@import '~bootstrap/scss/forms';
+@import '~bootstrap/scss/tables';
+@import '~bootstrap/scss/buttons';
+@import '~bootstrap/scss/transitions';
+@import '~bootstrap/scss/dropdown';
+@import '~bootstrap/scss/nav';
+@import '~bootstrap/scss/navbar'; // Requires nav
+@import '~bootstrap/scss/card';
+@import '~bootstrap/scss/close';
+@import '~bootstrap/scss/modal';
+
+//
+// Utilities API untuk menghasilkan utility classes
+//
+@import '~bootstrap/scss/utilities/api';
+
+//
+// Tambahkan custom code di sini
+//
